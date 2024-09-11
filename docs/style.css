@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'DauphinPlain';
+    src: url('../fonts/Dauphin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    box-sizing: border-box;
+    background: #1a1a1a;
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 50px;
+    font-weight: 400;
+    font-family: 'DauphinPlain', sans-serif;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.content-container img {
+    width: 100%;
+    height: auto;
+    display: block; 
+    margin-bottom: 20px; 
+}
+
+.content-container .text-content {
+    position: relative; 
+    z-index: 2; 
+    width: 100%; 
+    padding: 20px; 
+    color: white;
+}
+
+.content-container a {
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-content {
+    padding-top: 20%; 
+    color: white;
+}
+
+.fade-image {
+    position: center; 
+    scale: 2;
+    margin-top: 50%;
+    width: 100%;
+    height: auto;
+}
+
+.neon-button {
+    --glow-color: rgb(0, 255, 240);
+    --glow-spread-color: rgb(18, 83, 231, 0.781);
+    --enhanced-glow-color: rgb(149, 199, 187);
+    --btn-color: rgb(49, 58, 175);
+    border: 0.25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color); 
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    
+    max-width: 200px;
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.neon-button:after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.neon-button:hover {
+    color: var(--btn-color);
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.25em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
+
+.neon-button:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.25em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
