@@ -1,0 +1,180 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background: #101010;
+  cursor: url("cursor/pointer.cur"), pointer;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, i, #main-title, #about, .not_found {
+  font-family: Poppins;
+  --glow-color: rgb(255, 255, 255);
+  text-shadow: 0 0 0.25em var(--glow-color);
+  animation: pulse 1s infinite ease;
+  color: #fff;
+}
+
+@keyframes pulse {
+  0%, 100% {
+      text-shadow: 0 0 0.25em var(--glow-color);
+  }
+  50% {
+      text-shadow: 0 0 0.2em var(--glow-color);
+  }
+}
+
+.glitch-effect {
+  --placeholder: #000;
+}
+
+.main-title, .container-about, .container-skills, .container-experience {
+  height: 100vh;
+}
+
+#main-title {
+  font-size: 200px;
+  text-align: center;
+  letter-spacing: 12px;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#about, #skills, #experience {
+  position: relative;
+  font-size: 100px;
+  text-align: center;
+  margin-top: 100px;
+  font-weight: 500;
+}
+
+#location, #school, #specialization {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#location:hover, #school:hover, #specialization:hover {
+  margin-top: 150px;
+  margin-bottom: 200px;
+  cursor: url("cursor/link.cur"), pointer;
+}
+
+a, i {
+  background-color: #202020;
+  border: 0.5em solid #202020;
+  border-radius: 0.5em;
+  outline: none;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  box-shadow: 0 0 0.5em 0.25em #202020, 0 0 2em 0.5em #fff;
+  border: 1em solid #202020;
+  border-radius: 1em;
+  font-size: 65px;
+  cursor: url("cursor/link.cur"), pointer;
+}
+i:hover {
+  box-shadow: 0 0 0.3em 0.25em #202020, 0 0 1.5em 0.5em #fff;
+  border: 0.7em solid #202020;
+  border-radius: 0.7em;
+  font-size: 60px;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #101010;
+  padding: 20px;
+  border-radius: 2em;
+  text-align: center;
+  outline: white solid 0.25em;
+}
+
+.popup-content button {
+  --glow-color: rgb(255, 255, 255);
+  background: #101010;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  font-family: Poppins;
+  text-shadow: 0 0 0.25em var(--glow-color);
+  animation: pulse 1s infinite ease;
+  border-radius: 1em;
+  cursor: url("cursor/link.cur"), pointer;
+}
+
+/* <|----------- 404 Not Found -----------|>*/
+.not_found {
+  --not-found-color: #ff0000;
+  --glow-color: #ff0000;
+  font-size: 100px;
+  text-align: center;
+  margin-top: 100px;
+  font-weight: 600;
+  color: #ff0000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#not_found_text {
+  font-size: 50px;
+  font-weight: 300;
+  margin-top: 50px;
+}
+
+#return_button {
+  --glow-color: #ff0000;
+  margin-top: 50px;
+  display: block;
+  font-size: 50px;
+  font-weight: 300;
+  background-color: #101010;
+  border: 0.05em solid var(--not-found-color);
+  border-radius: 0.5em;
+  color: var(--not-found-color);
+  outline: none;
+  text-decoration: none;
+  min-width: 300px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#return_button:hover {
+  --glow-color: #ff0000;
+  font-size: 50px;
+  font-weight: 300;
+  border: 0.05em solid var(--not-found-color);
+  border-radius: 0.5em;
+  color: var(--not-found-color);
+}
+/* <|----------- 404 Not Found -----------|>*/
