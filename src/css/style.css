@@ -240,7 +240,7 @@ i:hover {
     .time {
       color: white;
       --glow-color: white;
-      font-size: 30px;
+      font-size: 50px;
       text-shadow: 0 0 0.1em var(--glow-color);
       border-bottom: 0.1em solid var(--glow-color);
       display: inline-block;
@@ -256,10 +256,14 @@ i:hover {
       animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
       animation-fill-mode: forwards;
       transition: filter 0.5s;
-
+      
       h2,
       p {
         width: 100%;
+      }
+
+      p {
+        font-size: 30px;
       }
 
       &:first-child {
