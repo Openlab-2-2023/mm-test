@@ -60,6 +60,21 @@ function checkUrlParameter(paramName) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  let userPublicIP;
+  async function fetchUserPublicIP() {
+    try {
+      const response = await fetch("https://api.ipify.org?format=json");
+      const data = await response.json();
+      userPublicIP = data.ip;
+      //console.log("User Public IP:", userPublicIP); // Log the fetched IP
+
+      // Update the loadingTexts array after fetching the IP
+      updateLoadingTexts();
+    } catch (error) {
+      console.error("Error fetching user public IP:", error);
+    }
+  }
+
   //----------------- Loading Text -----------------//
   const lwrapper = document.getElementById("lwrapper");
   const wrapper = document.querySelector(".wrapper");
@@ -72,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadingTexts = [
       "Loading content...",
       "Almost there...",
-      "This loading is infinite...",
       "Just a moment...",
       "Fetching data...",
       "Loading scripts...",
@@ -80,11 +94,31 @@ document.addEventListener("DOMContentLoaded", function () {
       "Loading matrix...",
       "Loading glitches...",
       "Lighting up Netherite FireWall...",
-      "Updatting to Protection VI...",
+      "Updating to Protection VI...",
       "Loading magic spells...",
       "Collecting dreams...",
       "Collecting Infinity Stones...",
+      "Collecting user data...",
+      "Loading BeEF...",
+      "Solving world hunger (just kidding, loading...)",
+      "Debugging human emotions...",
+      "Reconfiguring space-time continuum...",
+      "Uploading human experience to cloud...",
+      "Simulating reality (again)...",
+      "Calculating meaning of life...",
+      "Cracking the code of existence...",
+      "Initializing time travel sequence...",
+      "Decoding alien languages...(HTML)",
+      "Rebooting reality...",
+      "Applying patches...",
     ];
+
+    function updateLoadingTexts() {
+      loadingTexts.push(`Your IP: ${userPublicIP}`);
+      //console.log("Updated loadingTexts:", loadingTexts); // Log the updated array
+    }
+
+    fetchUserPublicIP();// Fetch the user's public IP
 
     let shuffledTexts = [];
     let currentIndex = 0;
@@ -104,10 +138,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentIndex >= shuffledTexts.length) {
         shuffledTexts = shuffleArray([...loadingTexts]);
         currentIndex = 0;
+        //console.log("Shuffled texts:", shuffledTexts); // Log the shuffled texts
       }
-      console.log(shuffledTexts);
+
       const randomText = shuffledTexts[currentIndex];
       loadingText.textContent = randomText;
+      //console.log("Current text:", randomText); // Log the current text
       currentIndex++;
 
       const randomInterval = Math.floor(Math.random() * 1500) + 500; // Set a random interval between 500ms and 2000ms
@@ -136,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Show the wrapper element after timeout
     setTimeout(function () {
       clearTimeout(timeoutId);
+      clearInterval(interval);
       if (Math.random() >= 0.3) {
         lwrapper.style.display = "none";
         wrapper.classList.remove("hidden");
@@ -333,6 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "Enchanted with Protection VI",
     "Protected by Netherite FireWall",
     "This website runs on sheer willpower and dreams",
+    "Unfortunately we dont have a sponsor for this kind of shit",
   ];
   const footerIndex =
     Math.floor(Math.random() * footerTexts.length) - Math.floor(Math.random());
